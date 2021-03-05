@@ -38,7 +38,7 @@ go version go1.16 windows/amd64
     ```
 - ทำการ Config GOPATH ใน windows environment variable
 
-  [windoeswnv](go-windows-env.png)
+  ![windoeswnv](go-windows-env.png)
 
 
 
