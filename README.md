@@ -10,5 +10,5 @@ go version go1.16 windows/amd64
 ```
 
 ## Example project
-- [Hello word](fd) : Hello world
+- [Hello word](updev-go-hellowold) : Hello world
 
