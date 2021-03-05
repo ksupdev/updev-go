@@ -7,3 +7,7 @@
     PS D:\git-myself\GO\updev-go\updev-go-hellowold> go run main.go
     Hello world
     ```
+- Build source code for production
+```
+
+```
