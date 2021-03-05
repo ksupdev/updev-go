@@ -10,4 +10,5 @@ go version go1.16 windows/amd64
 ```
 
 ## Example project
-- [Hello word with rest api](fd) : Example project basic rest api by GO go go
+- [Hello word](fd) : Hello world
+
