@@ -103,6 +103,73 @@ Hello World
 > Example Code [code : updev-go-helloworld](https://github.com/ksupdev/updev-go-helloworld)
 
 
+## ปรับปรุง My go-workspace
+
+ตอนนี้ directory ของ go-workspace 
+```
+PS D:\git-myself\GO\go-workspace\src> ls
+
+    Directory: D:\git-myself\GO\go-workspace\src
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       06/03/2021     16:02                updev-go-helloworld
+```
+ซึ่งเดียวเราจะปรับแปลี่ยนให้เหมือนกับที่ชาวบ้านทำกัน ตามที่มีการแนะนำจากทาง GitHub
+```
+D:\git-myself\GO\go-workspace\src\updev-go-helloworld
+change to
+D:\git-myself\GO\go-workspace\src\github.com\ksupdev\updev-go-helloworld
+```
+โดย ``github.com\ksupdev`` นั้นก็คือ github ของเรานั้นเอง 
+
+- ทำการปรับโครสร้าง folder
+  ```
+  D:\git-myself\GO\go-workspace\src> mkdir github.com
+  D:\git-myself\GO\go-workspace\src\github.com> mkdir ksupdev
+  D:\git-myself\GO\go-workspace\src\github.com\ksupdev
+  ```
+- ทำการ ย้าย project ``updev-go-helloworld`` ไปไว้ที่ Directory ใหม่ที่เราสร้างขึ้น และทำการทดสอบ run อีกที
+  ```
+  PS D:\git-myself\GO\go-workspace\src\github.com\ksupdev\updev-go-helloworld> go run main.go
+  Hello World
+  ```
+## Build project
+```
+PS D:\git-myself\GO\go-workspace\src\github.com\ksupdev\updev-go-helloworld> go build
+go: cannot find main module, but found .git/config in D:\git-myself\GO\go-workspace\src\github.com\ksupdev\updev-go-helloworld
+        to create a module there, run:
+        go mod init
+```
+และ error เนื่องจากไม่ได้มีการกำหนด module ซึ่งเป็นข้อกำหนดใหม่
+
+จาก error มีการแนะนำให้ run ``go mod init`` เพื่่อทำการ create module ใน Directory นี้
+
+```
+PS D:\git-myself\GO\go-workspace\src\github.com\ksupdev\updev-go-helloworld> go mod init
+go: creating new go.mod: module github.com/ksupdev/updev-go-helloworld
+go: to add module requirements and sums:
+        go mod tidy
+```
+
+หลังจากดราทำการ run command เราจะพบ ``go.mod`` อยู่ใน Folder
+```
+// file go.mod
+
+module github.com/ksupdev/updev-go-helloworld
+
+go 1.16
+
+```
+
+ทำการ run ``go build`` อีกที และเราจะได้ `` updev-go-helloworld.exe`` อยู่ใน directory
+
+ทำการทดสอบ program โดยการ
+```
+PS D:\git-myself\GO\go-workspace\src\github.com\ksupdev\updev-go-helloworld> .\updev-go-helloworld.exe
+Hello World
+```
+
 
 
 ## Example project
