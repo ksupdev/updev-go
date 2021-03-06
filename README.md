@@ -173,5 +173,6 @@ Hello World
 
 
 ## Example project
-- [Hello word](updev-go-hellowold) : Hello world
+- [updev-go-helloworld](https://github.com/ksupdev/updev-go-helloworld)
+ : Hello world
 
