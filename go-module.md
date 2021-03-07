@@ -198,8 +198,41 @@
     ```
 
 
-### command remind
+### Bonus 
+ผมลองได้ทำการ update ข้อมูลใน publicService และทำการ push code และ tag version ขึ้นไปใหม่
 
 ``` powershell
-
+PS D:\git-myself\GO\go-projects\publicService> git add .
+PS D:\git-myself\GO\go-projects\publicService> git commit -m "update service v2"
+[master c3bb23e] update service v2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS D:\git-myself\GO\go-projects\publicService> git push -u origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 322 bytes | 107.00 KiB/s, done.
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ksupdev/publicService.git
+PS D:\git-myself\GO\go-projects\publicService> git tag v1.0.1
+PS D:\git-myself\GO\go-projects\publicService> git push --tags
 ```
+
+และลองไปทำการ แก้ไขใน file go.mod เป็น ``github.com/ksupdev/publicService v1.0.1`` จากเดิมเป็น v1.0.0 และลอง run คำสั่ง 
+
+```powershell
+PS D:\git-myself\GO\go-projects\updev> go run .\updev.go
+go: github.com/ksupdev/publicService@v1.0.1: missing go.sum entry; to add it:
+        go mod download github.com/ksupdev/publicService
+```
+จาก Message เหมือนกับไม่พบ version และต้องการให้เราทำการ run ``go mod download github.com/ksupdev/publicService``
+
+```powershell
+PS D:\git-myself\GO\go-projects\updev> go mod download github.com/ksupdev/publicService
+PS D:\git-myself\GO\go-projects\updev> go run .\updev.go
+Hi, Gladys. My name's localService
+Hi, Gladys. My name's publicService version2
+```
+
+หลังจาก run mod download ก็พบว่า project ของเรา version เปลี่ยนเรียบร้อน ^^
+
