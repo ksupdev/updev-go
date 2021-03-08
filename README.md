@@ -175,4 +175,5 @@ Hello World
 ## Example project
 - [updev-go-helloworld](https://github.com/ksupdev/updev-go-helloworld)
  : Hello world
+- [updev_go_errorHandle](https://github.com/ksupdev/updev_go_errorHandle) : Exception handle
 
